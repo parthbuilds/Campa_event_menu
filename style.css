@@ -1,0 +1,190 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'League Spartan', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Header with Video */
+header {
+  position: relative;
+  height: 250px;
+  width: 100%;
+  padding: 1rem;
+}
+header video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+header .overlay {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Floating Logo */
+.logo {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  background-color: white;
+  padding: 5px;
+  object-fit: contain;
+}
+
+/* Bounce Animation */
+.bounce {
+  animation: bounceIn 1.2s ease-out forwards;
+}
+@keyframes bounceIn {
+  0%   { transform: translateX(-50%) translateY(-100px); opacity: 0; }
+  60%  { transform: translateX(-50%) translateY(20px); opacity: 1; }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+/* Menu Sections */
+section.menu-section {
+  padding: 2rem 1rem;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+section.menu-section h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+.menu-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.menu-item {
+  background: rgba(255,255,255,0.95);
+  color: #333;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.menu-item:hover {
+  transform: scale(1.02);
+}
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.menu-content {
+  padding: 1rem;
+}
+.menu-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.menu-content p {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #444;
+}
+.menu-content span {
+  font-weight: bold;
+  color: #0077cc;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+.modal.active {
+  display: flex;
+}
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  padding: 1rem;
+  position: relative;
+}
+.modal-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.modal-content h3 {
+  font-size: 1.5rem;
+}
+.modal-content p {
+  margin-bottom: 0.5rem;
+}
+.close-btn {
+  background: #0077cc;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  .menu-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+    bottom: -50px;
+  }
+}
+@media (min-width: 900px) {
+  .menu-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .menu-content h3 {
+    font-size: 1.5rem;
+  }
+  .menu-content p {
+    font-size: 1.1rem;
+  }
+}
