@@ -5,25 +5,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event Menu</title>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 
 <body>
-
     <header>
-        <video autoplay muted loop playsinline>
+        <img src="/images/campa_logo.svg" alt="Event Logo" class="logo" />
+        <video autoplay muted loop>
             <source src="/videos/campa_video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
-        <img src="/images/campa_logo.svg" alt="Logo" class="logo" />
         <div class="overlay">Event Menu</div>
     </header>
 
     <main>
-        <div class="menu-container" id="menu"></div>
+        <!-- Menu Sections - Empty containers for dynamic content -->
+        <section class="menu-section" id="beverages-section" style="background-image: url('images/beverages-bg.jpg');"
+            data-aos="fade-up">
+            <h2>Beverages</h2>
+            <div class="menu-container" id="beverages"></div>
+        </section>
+
+        <section class="menu-section" id="starters-section" style="background-image: url('images/starters-bg.jpg');"
+            data-aos="fade-up">
+            <h2>Starters</h2>
+            <div class="menu-container" id="starters"></div>
+        </section>
+
+        <section class="menu-section" id="fastfood-section" style="background-image: url('images/fastfood-bg.jpg');"
+            data-aos="fade-up">
+            <h2>Fast Food</h2>
+            <div class="menu-container" id="fastfood"></div>
+        </section>
     </main>
 
+    <!-- Modal -->
     <div class="modal" id="modal">
         <div class="modal-content">
             <button class="close-btn" onclick="closeModal()">Close</button>
@@ -35,7 +52,12 @@
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>
